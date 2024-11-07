@@ -1,0 +1,52 @@
+name: Test with pnpm
+
+on:
+  workflow_call:
+    inputs:
+      node_versions:
+        required: false
+        type: string
+        default: "20"
+      build_script:
+        required: false
+        type: string
+        default: "build"
+
+concurrency: ${{github.repository}}-${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ${{ fromJson(inputs.node_versions) }}
+    steps:
+      - id: checkout
+        name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - id: pnpm
+        name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - id: setup
+        name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - id: install
+        name: Install dependencies
+        run: pnpm i
+      
+      - id: build-packages
+        name: Build packages
+        run: pnpm run --recursive ${{ inputs.build_script }} --if-present
+      
+      - id: test-packages
+        name: Test all packages
+        run: pnpm test
