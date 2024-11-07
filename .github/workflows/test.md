@@ -1,4 +1,4 @@
-# Test workflow
+# Reusable test workflow
 
 Run your repo's test suite on pull requests and other workflow triggers. Supports pnpm [workspaces](https://pnpm.io/workspaces).
 
@@ -8,7 +8,7 @@ Run your repo's test suite on pull requests and other workflow triggers. Support
 - **Type:** `string`
 - **Required:** `false`
 - **Default:** `"20"`
-- **Description:** A comma-separated string of Node.js versions to be used in a matrix strategy. This allows testing across multiple Node versions. The default value is `"20"`. Example input: `'18,20,22'`.
+- **Description:** A JSON-parsable string of Node.js versions to be used in a matrix strategy. This allows testing across multiple Node versions. Example input: `'[18,20,22]'`.
 
 ### `build_script`
 - **Type:** `string`
@@ -21,15 +21,15 @@ Run your repo's test suite on pull requests and other workflow triggers. Support
 
 ### Setup
 
-Create a workflow file (e.g., `.github/workflows/test.yml`).
+Create a workflow file, e.g., `.github/workflows/test.yml`.
 
-Configure your test scripts to run via package script. For example:
+Make sure your package.json has the `packageManager` field filled in and configure your test scripts to run via package script. For example:
 
 ```json
-// package.json
 {
+  "packageManager": "pnpm@9.4",
   "scripts": {
-    "test": "c8 mocha test/**/*.ts"
+    "test": "vitest run"
   }
 }
 ```
@@ -45,7 +45,7 @@ on:
       - main
 
 jobs:
-  use-reusable:
+  test:
     uses: reuters-graphics/action-workflows/.github/workflows/test.yml@main
     secrets: inherit
 ```
@@ -61,11 +61,10 @@ on:
       - main
 
 jobs:
-  use-reusable:
+  test:
     uses: reuters-graphics/action-workflows/.github/workflows/test.yml@main
     secrets: inherit
     with:
-      repository: ${{ github.repository }}
-      node_versions: '20,22'
+      node_versions: '[20,22]'
       build_script: 'build:lib'
 ```

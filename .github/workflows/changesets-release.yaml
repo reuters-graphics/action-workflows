@@ -11,13 +11,13 @@ on:
         required: false
         type: string
         default: "build"
-      build_docs:
+      publish_docs:
         type: boolean
         default: false
       docs_directory:
         type: string
         default: "./docs"
-      
+
 
 concurrency: ${{github.repository}}-${{ github.workflow }}-${{ github.ref }}
 
@@ -68,8 +68,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   docs:
     needs: release
-    if: ${{ needs.release.outputs.published == 'true' && inputs.build_docs }}
-    uses: reuters-graphics/action-workflows/.github/workflows/docs.yml@main
+    if: ${{ needs.release.outputs.published == 'true' && inputs.publish_docs }}
+    uses: reuters-graphics/action-workflows/.github/workflows/docs.yaml@main
     secrets: inherit
     with:
       docs_directory: ${{ inputs.docs_directory }}
