@@ -1,7 +1,12 @@
 # action-workflows
 
-A collection of reusable GitHub Action workflows for doing common tasks.
+A collection of reusable GitHub Actions for common workflows the Reuters Graphics way.
 
-- [Test](./.github/workflows/test.md)
-- [Docs](./.github/workflows/docs.md)
-- [Changesets release](./.github/workflows/changesets-release.md)
+<img src="./logo.png" width="70" />
+
+## Workflows
+
+- [Test a package](./.github/workflows/test.md)
+- [Publish docs](./.github/workflows/docs.md)
+- [Release with Changesets](./.github/workflows/changesets-release.md)
+
