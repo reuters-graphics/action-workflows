@@ -40,7 +40,7 @@ on:
 
 jobs:
   docs:
-    uses: reuters-graphics/action-workflows/.github/workflows/docs.yml@main
+    uses: reuters-graphics/action-workflows/.github/workflows/docs.yaml@main
     secrets: inherit
 ```
 
@@ -56,7 +56,7 @@ on:
 
 jobs:
   docs:
-    uses: reuters-graphics/action-workflows/.github/workflows/docs.yml@main
+    uses: reuters-graphics/action-workflows/.github/workflows/docs.yaml@main
     secrets: inherit
     with:
       docs_directory: './dist'

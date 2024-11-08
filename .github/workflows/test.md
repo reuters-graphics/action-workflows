@@ -46,7 +46,7 @@ on:
 
 jobs:
   test:
-    uses: reuters-graphics/action-workflows/.github/workflows/test.yml@main
+    uses: reuters-graphics/action-workflows/.github/workflows/test.yaml@main
     secrets: inherit
 ```
 
@@ -62,7 +62,7 @@ on:
 
 jobs:
   test:
-    uses: reuters-graphics/action-workflows/.github/workflows/test.yml@main
+    uses: reuters-graphics/action-workflows/.github/workflows/test.yaml@main
     secrets: inherit
     with:
       node_versions: '[20,22]'

@@ -55,7 +55,7 @@ on:
 
 jobs:
   docs:
-    uses: reuters-graphics/action-workflows/.github/workflows/changesets-release.yml@main
+    uses: reuters-graphics/action-workflows/.github/workflows/changesets-release.yaml@main
     secrets: inherit
 ```
 
@@ -71,7 +71,7 @@ on:
 
 jobs:
   docs:
-    uses: reuters-graphics/action-workflows/.github/workflows/changesets-release.yml@main
+    uses: reuters-graphics/action-workflows/.github/workflows/changesets-release.yaml@main
     secrets: inherit
     with:
       node_version: '20'
