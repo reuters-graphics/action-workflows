@@ -69,6 +69,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   docs:
+    name: Publish docs
     needs: release
     if: ${{ needs.release.outputs.published == 'true' && inputs.publish_docs }}
     uses: reuters-graphics/action-workflows/.github/workflows/docs.yaml@main
