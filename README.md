@@ -7,6 +7,7 @@ A collection of reusable GitHub Actions for common workflows the Reuters Graphic
 ## Workflows
 
 - [Test a package](./.github/workflows/test.md)
+- [Lint a package](./.github/workflows/lint.md)
 - [Publish docs](./.github/workflows/docs.md)
 - [Release with Changesets](./.github/workflows/changesets-release.md)
 
