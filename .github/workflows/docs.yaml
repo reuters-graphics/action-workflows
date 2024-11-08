@@ -11,6 +11,10 @@ on:
         required: false
         type: string
         default: "20"
+      build_script:
+        required: false
+        type: string
+        default: "build"
 
 permissions:
   contents: write
@@ -39,10 +43,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node_version }}
-          # cache: pnpm
+          cache: pnpm
       
       - name: Install dependencies
         run: pnpm i
+      
+      - id: build-packages
+        name: Build all packages
+        run: pnpm run --recursive --if-present ${{ inputs.build_script }} 
       
       - name: Build docs
         run: pnpm run --if-present build:docs

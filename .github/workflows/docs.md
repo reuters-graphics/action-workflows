@@ -16,6 +16,12 @@ Publish your docs to GitHub Pages via an action.
 - **Default:** `"20"`
 - **Description:** Node.js version to be used.
 
+### `build_script`
+- **Type:** `string`
+- **Required:** `false`
+- **Default:** `"build"`
+- **Description:** The build script to run using `pnpm run --recursive <build_script> --if-present`. If the script does not exist, it will be skipped.
+
 ## Example usage
 
 ### Setup
