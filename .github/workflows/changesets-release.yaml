@@ -55,7 +55,7 @@ jobs:
       
       - id: build-packages
         name: Build all packages
-        run: pnpm run -r ${{ inputs.build_script }} --if-present
+        run: pnpm run --recursive --if-present ${{ inputs.build_script }} 
 
       - id: changesets
         name: Create release Pull Request or publish to npm

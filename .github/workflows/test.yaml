@@ -45,7 +45,7 @@ jobs:
       
       - id: build-packages
         name: Build packages
-        run: pnpm run --recursive ${{ inputs.build_script }} --if-present
+        run: pnpm run --recursive --if-present ${{ inputs.build_script }}
       
       - id: test-packages
         name: Test all packages
