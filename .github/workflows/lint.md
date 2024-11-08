@@ -16,7 +16,7 @@ Run ESLint and Prettier in CI.
 
 Create a workflow file, e.g., `.github/workflows/release.yml`.
 
-Make sure ESLint and prettier are configured (probably using [yaks](https://reuters-graphics.github.io/yaks/)) and your package.json has the `packageManager` field filled in.
+Make sure ESLint and Prettier are configured for your project (probably using [yaks](https://reuters-graphics.github.io/yaks/)) and your package.json has the `packageManager` field filled in.
 
 ```json
 {
@@ -35,7 +35,7 @@ on:
       - main
 
 jobs:
-  docs:
+  lint:
     uses: reuters-graphics/action-workflows/.github/workflows/lint.yaml@main
     secrets: inherit
 ```
@@ -51,7 +51,7 @@ on:
       - main
 
 jobs:
-  docs:
+  lint:
     uses: reuters-graphics/action-workflows/.github/workflows/lint.yaml@main
     secrets: inherit
     with:

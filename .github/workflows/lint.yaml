@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 jobs:
-  run-linters:
+  lint:
     name: Run linters
     runs-on: ubuntu-latest
 
@@ -37,9 +37,9 @@ jobs:
 
       - id: install
         name: Install dependencies
-        run: pnpm install
+        run: pnpm i
 
-      - id: lint
+      - id: run-linters
         name: Run linters
         uses: wearerequired/lint-action@v2
         with:

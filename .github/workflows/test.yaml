@@ -15,8 +15,8 @@ on:
 concurrency: ${{github.repository}}-${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
-    name: Release
+  test:
+    name: Test
     runs-on: ubuntu-latest
     strategy:
       matrix:

@@ -54,7 +54,7 @@ on:
       - main
 
 jobs:
-  docs:
+  release:
     uses: reuters-graphics/action-workflows/.github/workflows/changesets-release.yaml@main
     secrets: inherit
 ```
@@ -70,7 +70,7 @@ on:
       - main
 
 jobs:
-  docs:
+  release:
     uses: reuters-graphics/action-workflows/.github/workflows/changesets-release.yaml@main
     secrets: inherit
     with:
