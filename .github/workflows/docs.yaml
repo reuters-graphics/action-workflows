@@ -7,6 +7,10 @@ on:
         required: false
         type: string
         default: "./docs"
+      node_version:
+        required: false
+        type: string
+        default: "20"
 
 permissions:
   contents: write
@@ -33,7 +37,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ inputs.node_version }}
           cache: pnpm
       
       - name: Install dependencies

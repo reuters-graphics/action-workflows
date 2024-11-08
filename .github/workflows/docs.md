@@ -10,6 +10,11 @@ Publish your docs to GitHub Pages via an action.
 - **Default:** `"./docs"`
 - **Description:** The directory (relative to project root) where your docs will be built to.
 
+### `node_version`
+- **Type:** `string`
+- **Required:** `false`
+- **Default:** `"20"`
+- **Description:** Node.js version to be used.
 
 ## Example usage
 
@@ -60,4 +65,5 @@ jobs:
     secrets: inherit
     with:
       docs_directory: './dist'
+      node_version: '22'
 ```

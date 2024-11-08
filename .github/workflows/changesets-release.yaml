@@ -76,3 +76,4 @@ jobs:
     secrets: inherit
     with:
       docs_directory: ${{ inputs.docs_directory }}
+      node_version: ${{ inputs.node_version }}
