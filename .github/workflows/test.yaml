@@ -23,6 +23,7 @@ jobs:
         node-version: ${{ fromJson(inputs.node_versions) }}
     env:
       TESTING: true
+      OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
     steps:
       - id: checkout
         name: Checkout Repo

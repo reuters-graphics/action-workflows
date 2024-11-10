@@ -48,8 +48,6 @@ jobs:
   test:
     uses: reuters-graphics/action-workflows/.github/workflows/test.yaml@main
     secrets: inherit
-    env:
-      TESTING: true
 ```
 
 ### Custom Node versions and build script
@@ -66,9 +64,13 @@ jobs:
   test:
     uses: reuters-graphics/action-workflows/.github/workflows/test.yaml@main
     secrets: inherit
-    env:
-      TESTING: true
     with:
       node_versions: '[20,22]'
       build_script: 'build:lib'
 ```
+
+## Limitations
+
+Environment variables [cannot be shared](https://docs.github.com/en/actions/sharing-automations/reusing-workflows#limitations) with this workflow.
+
+So if you need any, you'll need to write your own workflow file.
