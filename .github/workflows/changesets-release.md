@@ -33,15 +33,27 @@ Publish your package to npm with changesets.
 
 ### Setup
 
-Create a workflow file, e.g., `.github/workflows/release.yml`.
+Add [changesets](https://github.com/changesets/changesets) to your project:
 
-Make sure your package.json has the `packageManager` field filled in.
+```console
+pnpm i -D @changesets/cli
+pnpm changeset init
+```
+
+Make sure your package.json has the `packageManager` field filled in and changesets scripts added:
 
 ```json
 {
-  "packageManager": "pnpm@9.4"
+  "packageManager": "pnpm@9.4",
+  "scripts": {
+    "changeset:version": "changeset version",
+    "changeset:publish": "git add --all && changeset publish"
+  }
 }
 ```
+
+Finally, create a workflow file, e.g., `.github/workflows/release.yml`.
+
 
 ### Basic usage
 
