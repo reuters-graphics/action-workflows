@@ -32,7 +32,7 @@ Make sure your package.json has the `packageManager` field filled in and, if nee
 
 ```json
 {
-  "packageManager": "pnpm@9.4",
+  "packageManager": "pnpm@9.6.0",
   "scripts": {
     "build:docs": "astro build"
   }
