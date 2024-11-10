@@ -48,6 +48,8 @@ jobs:
   test:
     uses: reuters-graphics/action-workflows/.github/workflows/test.yaml@main
     secrets: inherit
+    env:
+      TESTING: true
 ```
 
 ### Custom Node versions and build script
@@ -64,6 +66,8 @@ jobs:
   test:
     uses: reuters-graphics/action-workflows/.github/workflows/test.yaml@main
     secrets: inherit
+    env:
+      TESTING: true
     with:
       node_versions: '[20,22]'
       build_script: 'build:lib'

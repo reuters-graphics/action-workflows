@@ -21,6 +21,8 @@ jobs:
     strategy:
       matrix:
         node-version: ${{ fromJson(inputs.node_versions) }}
+    env:
+      TESTING: true
     steps:
       - id: checkout
         name: Checkout Repo
