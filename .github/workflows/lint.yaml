@@ -39,10 +39,10 @@ jobs:
         name: Install dependencies
         run: pnpm i
 
-      - id: run-linters
-        name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
-          prettier_auto_fix: true
+      - id: eslint
+        name: ESLint
+        run: pnpm eslint .
+      
+      - id: prettier
+        name: Prettier
+        run: pnpm prettier . --check
