@@ -39,6 +39,8 @@ Make sure your package.json has the `packageManager` field filled in and, if nee
 }
 ```
 
+It's alse generally recommended to add the `docs/` directory (or whichever directory your docs are built to) to your `.gitignore`.
+
 ### Basic usage
 
 ```yaml
