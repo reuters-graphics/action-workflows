@@ -26,6 +26,8 @@ Publish your docs to GitHub Pages via an action.
 
 ### Setup
 
+Setup GitHub Pages on your repo and choose [GitHub Actions as the publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow).
+
 Create a workflow file, e.g., `.github/workflows/docs.yml`.
 
 Make sure your package.json has the `packageManager` field filled in and, if needed, configure your docs to build via package script `build:docs`. For example:
