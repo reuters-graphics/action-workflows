@@ -20,7 +20,7 @@ Make sure ESLint and Prettier are configured for your project (probably using [y
 
 ```json
 {
-  "packageManager": "pnpm@9.4"
+  "packageManager": "pnpm@9.6.0"
 }
 ```
 
