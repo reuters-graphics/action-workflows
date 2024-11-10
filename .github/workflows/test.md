@@ -27,7 +27,7 @@ Make sure your package.json has the `packageManager` field filled in and configu
 
 ```json
 {
-  "packageManager": "pnpm@9.4",
+  "packageManager": "pnpm@9.6.0",
   "scripts": {
     "test": "vitest run"
   }
