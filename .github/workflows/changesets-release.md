@@ -44,7 +44,7 @@ Make sure your package.json has the `packageManager` field filled in and changes
 
 ```json
 {
-  "packageManager": "pnpm@9.4",
+  "packageManager": "pnpm@9.6.0",
   "scripts": {
     "changeset:version": "changeset version",
     "changeset:publish": "git add --all && changeset publish"
