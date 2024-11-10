@@ -27,10 +27,10 @@ Make sure ESLint and Prettier are configured for your project (probably using [y
 ### Basic usage
 
 ```yaml
-name: Release
+name: Lint
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -43,10 +43,10 @@ jobs:
 ### Custom Node version
 
 ```yaml
-name: Release
+name: Lint
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
