@@ -6,7 +6,7 @@ on:
       node_versions:
         required: false
         type: string
-        default: "20"
+        default: "[20]"
       build_script:
         required: false
         type: string
