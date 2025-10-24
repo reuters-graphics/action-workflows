@@ -29,6 +29,13 @@ Publish your package to npm with changesets.
 - **Description:** The directory (relative to project root) where your docs will be built to.
 
 
+## Outputs
+
+### `published`
+- **Type:** `string`
+- **Description:** Whether packages were published to npm. Returns `'true'` if packages were published, `'false'` otherwise.
+
+
 ## Example usage
 
 ### Setup
@@ -90,4 +97,30 @@ jobs:
       build_script: 'build:lib'
       publish_docs: true
       docs_directory: './myDocs'
+```
+
+### Using outputs
+
+You can use the `published` output to run additional jobs conditionally after publishing:
+
+```yaml
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    uses: reuters-graphics/action-workflows/.github/workflows/changesets-release.yaml@main
+    secrets: inherit
+
+  notify:
+    needs: release
+    if: needs.release.outputs.published == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification
+        run: echo "Packages were published to npm!"
 ```
