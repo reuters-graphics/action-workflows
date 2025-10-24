@@ -17,6 +17,10 @@ on:
       docs_directory:
         type: string
         default: "./docs"
+    outputs:
+      published:
+        description: "Whether packages were published to npm"
+        value: ${{ jobs.release.outputs.published }}
 
 
 concurrency: ${{github.repository}}-${{ github.workflow }}-${{ github.ref }}
