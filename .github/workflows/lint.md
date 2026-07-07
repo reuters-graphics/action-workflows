@@ -7,7 +7,7 @@ Run ESLint and Prettier in CI.
 ### `node_version`
 - **Type:** `string`
 - **Required:** `false`
-- **Default:** `"20"`
+- **Default:** `"22"`
 - **Description:** Node.js version to be used.
 
 ## Example usage

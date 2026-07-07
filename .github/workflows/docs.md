@@ -13,7 +13,7 @@ Publish your docs to GitHub Pages via an action.
 ### `node_version`
 - **Type:** `string`
 - **Required:** `false`
-- **Default:** `"20"`
+- **Default:** `"22"`
 - **Description:** Node.js version to be used.
 
 ### `build_script`
