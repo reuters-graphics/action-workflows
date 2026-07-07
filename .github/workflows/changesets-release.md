@@ -7,7 +7,7 @@ Publish your package to npm with changesets.
 ### `node_version`
 - **Type:** `string`
 - **Required:** `false`
-- **Default:** `"20"`
+- **Default:** `"22"`
 - **Description:** Node.js version to be used.
 
 ### `build_script`
@@ -93,7 +93,7 @@ jobs:
     uses: reuters-graphics/action-workflows/.github/workflows/changesets-release.yaml@main
     secrets: inherit
     with:
-      node_version: '20'
+      node_version: '22'
       build_script: 'build:lib'
       publish_docs: true
       docs_directory: './myDocs'

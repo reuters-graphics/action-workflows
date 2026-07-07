@@ -7,7 +7,7 @@ Run your repo's test suite on pull requests and other workflow triggers. Support
 ### `node_versions`
 - **Type:** `string`
 - **Required:** `false`
-- **Default:** `"20"`
+- **Default:** `"[22]"`
 - **Description:** A JSON-parsable string of Node.js versions to be used in a matrix strategy. This allows testing across multiple Node versions. Example input: `'[18,20,22]'`.
 
 ### `build_script`
