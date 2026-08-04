@@ -22,6 +22,24 @@ Publish your docs to GitHub Pages via an action.
 - **Default:** `"build"`
 - **Description:** The build script to run using `pnpm run --recursive <build_script> --if-present`. If the script does not exist, it will be skipped.
 
+## Secrets
+
+### `VITE_MAPBOX_ACCESS_TOKEN`
+- **Required:** `false`
+- **Description:** A Mapbox access token exposed to the `build:docs` script as `VITE_MAPBOX_ACCESS_TOKEN`.
+
+Store the token as an Actions secret in the caller repository. The `secrets: inherit` setting in the examples below passes it to the reusable workflow. To pass only this secret instead:
+
+```yaml
+jobs:
+  docs:
+    uses: reuters-graphics/action-workflows/.github/workflows/docs.yaml@main
+    secrets:
+      VITE_MAPBOX_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOX_ACCESS_TOKEN }}
+```
+
+Vite embeds `VITE_*` values in the client bundle, so use a public Mapbox token with appropriate URL and scope restrictions.
+
 ## Example usage
 
 ### Setup
