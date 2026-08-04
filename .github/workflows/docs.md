@@ -28,7 +28,7 @@ Publish your docs to GitHub Pages via an action.
 - **Required:** `false`
 - **Description:** A Mapbox access token exposed to the `build:docs` script as `VITE_MAPBOX_ACCESS_TOKEN`.
 
-Store the token as an Actions secret in the caller repository. The `secrets: inherit` setting in the examples below passes it to the reusable workflow. To pass only this secret instead:
+Store the token as an Actions secret in the caller repository. For callers in the same organization or enterprise, the `secrets: inherit` setting in the examples below passes it to the reusable workflow. Otherwise, or to pass only this secret, map it explicitly:
 
 ```yaml
 jobs:
