@@ -72,6 +72,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # Auth for any `gh` calls made by npm lifecycle scripts during publish
+          # (e.g. a prepublishOnly that pulls build inputs from another private
+          # repo). The default GITHUB_TOKEN is scoped to the calling repo only,
+          # so prefer REPO_PAT_TOKEN when it's configured and fall back to the
+          # existing behaviour when it isn't.
+          GH_TOKEN: ${{ secrets.REPO_PAT_TOKEN || secrets.GITHUB_TOKEN }}
   docs:
     name: Publish docs
     needs: release

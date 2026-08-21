@@ -29,6 +29,19 @@ Publish your package to npm with changesets.
 - **Description:** The directory (relative to project root) where your docs will be built to.
 
 
+## Secrets
+
+Pass these with `secrets: inherit`.
+
+### `NPM_TOKEN`
+- **Required:** yes (to publish)
+- **Description:** npm token with publish rights to your package's scope.
+
+### `REPO_PAT_TOKEN`
+- **Required:** no
+- **Description:** A personal access token used as `GH_TOKEN` for the publish step, so `gh` calls made by npm lifecycle scripts can reach **other private repos**. Only needed if a lifecycle script (e.g. `prepublishOnly`) fetches build inputs from a different private repo — the default `GITHUB_TOKEN` is scoped to the calling repo and can't read them. When it isn't set, `GH_TOKEN` falls back to `GITHUB_TOKEN`.
+
+
 ## Outputs
 
 ### `published`
